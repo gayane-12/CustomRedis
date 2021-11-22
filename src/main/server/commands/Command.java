@@ -1,5 +1,7 @@
 package main.server.commands;
 
+import main.server.exceptions.BadRequestException;
+
 public class Command {
     private CommandStrategy commandStrategy;
 
@@ -11,7 +13,7 @@ public class Command {
         this.commandStrategy = commandStrategy;
     }
 
-    public String perform(String[] commands) {
+    public String perform(String[] commands) throws BadRequestException {
         return commandStrategy.execute(commands);
     }
 
